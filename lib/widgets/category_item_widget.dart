@@ -8,7 +8,7 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: 200.w,
+      width: 300.w,
       height: 300.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(32),

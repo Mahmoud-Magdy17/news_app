@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app_ui_setup/widgets/category_item_widget.dart';
+import 'package:news_app_ui_setup/widgets/categories_listview.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,24 +8,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        title: const Row(
-          children: [
-            Text("News"),
-            Text(
-              "Cloud",
-              style: TextStyle(
-                color: Colors.orange,
-              ),
-            )
-          ],
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          title: const Row(
+            children: [
+              Text("News"),
+              Text(
+                "Cloud",
+                style: TextStyle(
+                  color: Colors.orange,
+                ),
+              )
+            ],
+          ),
         ),
-      ),
-      body: CategoryItem(image: 'assets/technology.jpeg')
-    
-    );
+        body: CategoriesListView());
   }
 }
