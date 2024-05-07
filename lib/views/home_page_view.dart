@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app_ui_setup/widgets/categories_listview.dart';
 import 'package:news_app_ui_setup/widgets/news_item_widget.dart';
@@ -26,7 +27,18 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: NewsListView(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          children: [
+            CategoriesListView(),
+            const SizedBox(
+              height: 32,
+            ),
+            Expanded(child: NewsListView()),
+          ],
+        ),
+      ),
     );
   }
 }

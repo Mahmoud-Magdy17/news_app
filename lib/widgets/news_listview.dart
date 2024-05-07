@@ -8,6 +8,7 @@ class NewsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      physics: BouncingScrollPhysics(),
       itemBuilder: (contect, index) {
         return NewsItem(
           image:
@@ -16,7 +17,7 @@ class NewsListView extends StatelessWidget {
           discription: 'Hello',
         );
       },
-      separatorBuilder: (context, index) => SizedBox(height: 24.h),
+      separatorBuilder: (context, index) => SizedBox(height: 32.h),
       itemCount: 10,
     );
   }
