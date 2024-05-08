@@ -33,6 +33,7 @@ class CategoriesListView extends StatelessWidget {
       image: 'assets/sports.jpg',
     ),
   ];
+  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
