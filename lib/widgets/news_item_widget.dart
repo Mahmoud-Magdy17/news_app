@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NewsItem extends StatelessWidget {
@@ -24,12 +23,12 @@ class NewsItem extends StatelessWidget {
               height: 500.h,
               width: double.infinity,
               fit: BoxFit.cover,
-              image: NetworkImage(
+              image: const NetworkImage(
                 'https://images.unsplash.com/photo-1638303322325-ff70d6224a22?q=80&w=1943&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Text(
@@ -37,19 +36,18 @@ class NewsItem extends StatelessWidget {
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           Text(
-            // textAlign: TextAlign.left,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             discription,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 12,
               color: Colors.grey,
             ),

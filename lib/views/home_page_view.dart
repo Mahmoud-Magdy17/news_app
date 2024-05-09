@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app_ui_setup/widgets/categories_listview.dart';
-import 'package:news_app_ui_setup/widgets/news_item_widget.dart';
 import 'package:news_app_ui_setup/widgets/news_listview.dart';
 
 class HomePage extends StatelessWidget {
@@ -30,19 +27,18 @@ class HomePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: CustomScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
               child: CategoriesListView(),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: SizedBox(
                 height: 32,
               ),
             ),
-            SliverToBoxAdapter(
-              child: NewsListView(),
-            )
+            const NewsListView(),
+            
           ],
         ),
       ),
