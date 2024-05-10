@@ -11,8 +11,8 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        centerTitle: true,
         title: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("News"),
             Text(
