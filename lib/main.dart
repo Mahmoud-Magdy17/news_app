@@ -28,6 +28,6 @@ class NewsApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: const HomePage(),
       ),
-    );
+    ); 
   }
 }
