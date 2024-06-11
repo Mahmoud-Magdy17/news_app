@@ -29,7 +29,7 @@ class NewsItem extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 12,
+            height: 8,
           ),
           Text(
             // textAlign: TextAlign.left,
@@ -41,7 +41,7 @@ class NewsItem extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 4,
+            height: 2,
           ),
           Text(
             maxLines: 2,
@@ -52,6 +52,7 @@ class NewsItem extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
+          SizedBox(height: 8,)
         ],
       ),
     );
