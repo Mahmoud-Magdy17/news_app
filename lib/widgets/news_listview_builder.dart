@@ -12,12 +12,13 @@ class NewsListViewBuilder extends StatefulWidget {
 }
 
 class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
-  List<Article> articles = [];
   bool isLoading = true;
+  List<Article> articles = [];
   @override
   void initState() {
     super.initState();
     getGeneralNews();
+    // print(articles);
   }
 
   Future<void> getGeneralNews() async {
@@ -29,7 +30,8 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
   @override
   Widget build(BuildContext context) {
     return isLoading
-        ? CircularProgressIndicator()
+        ? const SliverToBoxAdapter(
+            child: Center(child: CircularProgressIndicator()))
         : NewsListView(
             articles: articles,
           );
