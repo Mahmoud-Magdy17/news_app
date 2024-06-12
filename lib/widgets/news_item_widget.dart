@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app_ui_setup/models/article_model.dart';
 
 class NewsItem extends StatelessWidget {
   const NewsItem(
-      {super.key,
-      required this.image,
-      required this.title,
-      required this.discription});
-  final String image;
-  final String title;
-  final String discription;
+    {required this.article}
+  );
+  final Article article;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -23,8 +20,9 @@ class NewsItem extends StatelessWidget {
               height: 500.h,
               width: double.infinity,
               fit: BoxFit.cover,
-              image: const NetworkImage(
-                'https://images.unsplash.com/photo-1638303322325-ff70d6224a22?q=80&w=1943&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              image: NetworkImage(
+                article.image ??
+                'https://th.bing.com/th/id/R.18f14463a91f8316ec8daea09ab5baaf?rik=1ONxPv6onaga7A&pid=ImgRaw&r=0'
               ),
             ),
           ),
@@ -35,7 +33,7 @@ class NewsItem extends StatelessWidget {
             // textAlign: TextAlign.left,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            title,
+            article.title,
             style: const TextStyle(
               fontSize: 16,
             ),
@@ -46,7 +44,7 @@ class NewsItem extends StatelessWidget {
           Text(
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            discription,
+            article.subTitle ?? 'no discribtion exist',
             style: const TextStyle(
               fontSize: 12,
               color: Colors.grey,

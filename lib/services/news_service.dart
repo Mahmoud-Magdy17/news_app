@@ -6,7 +6,7 @@ class NewsService {
 
   NewsService({required this.dio});
 
-  getGeneralNews() async {
+  Future<List<Article>> getGeneralNews() async {
     Response response = await dio.get(
         "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=3d80ba6fd97d4a9a9b0e34c410b22891");
 
@@ -23,5 +23,6 @@ class NewsService {
         ),
       );
     }
+    return articles;
   }
 }

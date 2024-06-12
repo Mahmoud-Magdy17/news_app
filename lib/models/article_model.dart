@@ -1,8 +1,8 @@
 class Article {
   final String title;
-  final String subTitle;
-  final String image;
-  final String content;
+  final String? subTitle;
+  final String? image;
+  final String? content;
 
   Article({
     required this.content,
