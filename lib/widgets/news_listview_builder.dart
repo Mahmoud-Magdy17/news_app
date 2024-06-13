@@ -33,7 +33,7 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
         ? const SliverToBoxAdapter(
             child: Center(child: CircularProgressIndicator()))
         : articles.isNotEmpty
-            ? NewsListView(
+            ? NewsListView( 
                 articles: articles,
               )
             : const SliverToBoxAdapter(
