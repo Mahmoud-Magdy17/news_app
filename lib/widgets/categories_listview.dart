@@ -7,7 +7,7 @@ class CategoriesListView extends StatelessWidget {
   CategoriesListView({
     super.key,
   });
-  List<CategoryElement> items = [
+  List<CategoryElement> items = const[
     CategoryElement(
       name: 'General',
       image: 'assets/General.png',

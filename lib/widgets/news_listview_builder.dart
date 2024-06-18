@@ -5,39 +5,42 @@ import 'package:news_app_ui_setup/services/news_service.dart';
 import 'package:news_app_ui_setup/widgets/news_listview.dart';
 
 class NewsListViewBuilder extends StatefulWidget {
-  const NewsListViewBuilder({super.key});
-
+  const NewsListViewBuilder({super.key, required this.category});
+  final String category;
   @override
   State<NewsListViewBuilder> createState() => _NewsListViewBuilderState();
 }
 
 class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
   bool isLoading = true;
-  List<Article> articles = [];
+  var articles;
   @override
   void initState() {
     super.initState();
-    getGeneralNews();
-    // print(articles);
-  }
-
-  Future<void> getGeneralNews() async {
-    articles = await NewsService(dio: Dio()).getGeneralNews();
-    isLoading = false;
-    setState(() {});
+    articles = NewsService( category: widget.category, dio: Dio()).getTopHeadlinesNews();
   }
 
   @override
   Widget build(BuildContext context) {
-    return isLoading
-        ? const SliverToBoxAdapter(
-            child: Center(child: CircularProgressIndicator()))
-        : articles.isNotEmpty
-            ? NewsListView( 
-                articles: articles,
+    return FutureBuilder<List<Article>>(
+      future: articles,
+      builder: (context, snapshot) {
+        return snapshot.hasData
+            ? NewsListView(
+                articles: snapshot.data!,
               )
-            : const SliverToBoxAdapter(
-                child: Text("Sorry error on loading data, try soon!"),
-              );
+            : snapshot.hasError
+                ? const SliverToBoxAdapter(
+                    child: Text(
+                      "Sorry error on loading data, try soon!",
+                    ),
+                  )
+                : const SliverToBoxAdapter(
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  );
+      },
+    );
   }
 }
