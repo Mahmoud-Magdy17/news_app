@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class Article {
   final String title;
   final String? subTitle;
@@ -10,4 +12,12 @@ class Article {
     required this.subTitle,
     required this.image,
   });
+  factory Article.fromJson(Map<String,dynamic>json){
+    return Article(
+          title: json['title'],
+          subTitle: json['description'],
+          image: json['urlToImage'],
+          content: json['content'],
+        );
+  }
 }

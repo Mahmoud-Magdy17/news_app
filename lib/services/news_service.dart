@@ -16,12 +16,7 @@ Response response = await dio.get(
     List<Article> articles = [];
     for (var article in articlesJson) {
       articles.add(
-        Article(
-          title: article['title'],
-          subTitle: article['description'],
-          image: article['urlToImage'],
-          content: article['content'],
-        ),
+        Article.fromJson(article),
       );
     }
     return articles;
