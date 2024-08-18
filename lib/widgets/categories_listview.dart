@@ -4,10 +4,10 @@ import 'package:news_app_ui_setup/models/category_model.dart';
 import 'package:news_app_ui_setup/widgets/category_item_widget.dart';
 
 class CategoriesListView extends StatelessWidget {
-  CategoriesListView({
+  const CategoriesListView({
     super.key,
   });
-  List<CategoryElement> items = const[
+  final List<CategoryElement> items = const[
     CategoryElement(
       name: 'General',
       image: 'assets/General.png',

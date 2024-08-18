@@ -4,7 +4,7 @@ import 'package:news_app_ui_setup/models/article_model.dart';
 
 class NewsItem extends StatelessWidget {
   const NewsItem(
-    {required this.article}
+    {super.key, required this.article}
   );
   final Article article;
   @override
@@ -50,7 +50,7 @@ class NewsItem extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
-          SizedBox(height: 8,)
+          const SizedBox(height: 8,)
         ],
       ),
     );

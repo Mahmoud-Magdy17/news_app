@@ -8,7 +8,7 @@ void main() {
   runApp(
     DevicePreview(
       enabled: kReleaseMode,
-      builder: (context) => NewsApp(),
+      builder: (context) => const NewsApp(),
     ),
   );
 }
