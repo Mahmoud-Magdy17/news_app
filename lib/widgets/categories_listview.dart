@@ -10,7 +10,7 @@ class CategoriesListView extends StatelessWidget {
   final List<CategoryElement> items = const[
     CategoryElement(
       name: 'General',
-      image: 'assets/General.png',
+      image: 'assets/General1.jpg',
     ),
     CategoryElement(
       image: 'assets/technology.jpeg',

@@ -25,20 +25,20 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: CustomScrollView(
-          physics: const BouncingScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
               child: CategoriesListView(),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: SizedBox(
                 height: 32,
               ),
             ),
-            const NewsListViewBuilder(category: 'general',),
+            NewsListViewBuilder(category: 'general',),
             
           ],
         ),

@@ -20,7 +20,6 @@ class NewsApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(1080, 1920),
       builder: (context, child) => MaterialApp(
-        // ignore: deprecated_member_use
         useInheritedMediaQuery: true,
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
